@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "688748832044",
+    "project_id": "organic-plate",
+    "storage_bucket": "organic-plate.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:688748832044:android:3da8283fd12ef12d31f889",
+        "android_client_info": {
+          "package_name": "com.example.organic_plate"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCxkBaCr8oSKTz0a9PiEgD02NCu6ZyVV5I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
