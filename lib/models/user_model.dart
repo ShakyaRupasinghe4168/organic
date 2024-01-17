@@ -12,7 +12,7 @@ class UserModel {
   final String street;
   final bool isAdmin;
   final bool isActive;
-  final DateTime createdOn; 
+  final DateTime createdOn;
   final String city;
 
   UserModel({
@@ -45,7 +45,7 @@ class UserModel {
       'street': street,
       'isAdmin': isAdmin,
       'isActive': isActive,
-      'createdOn': createdOn.toUtc().toIso8601String(), 
+      'createdOn': createdOn.toUtc().toIso8601String(),
       'city': city,
     };
   }
@@ -66,6 +66,39 @@ class UserModel {
       isActive: json['isActive'],
       createdOn: DateTime.parse(json['createdOn']),
       city: json['city'],
+    );
+  }
+
+  // Copy constructor to create a new instance with updated values
+  UserModel copyWith({
+    String? uId,
+    String? username,
+    String? email,
+    String? phone,
+    String? userImg,
+    String? userDeviceToken,
+    String? country,
+    String? userAddress,
+    String? street,
+    bool? isAdmin,
+    bool? isActive,
+    DateTime? createdOn,
+    String? city,
+  }) {
+    return UserModel(
+      uId: uId ?? this.uId,
+      username: username ?? this.username,
+      email: email ?? this.email,
+      phone: phone ?? this.phone,
+      userImg: userImg ?? this.userImg,
+      userDeviceToken: userDeviceToken ?? this.userDeviceToken,
+      country: country ?? this.country,
+      userAddress: userAddress ?? this.userAddress,
+      street: street ?? this.street,
+      isAdmin: isAdmin ?? this.isAdmin,
+      isActive: isActive ?? this.isActive,
+      createdOn: createdOn ?? this.createdOn,
+      city: city ?? this.city,
     );
   }
 }

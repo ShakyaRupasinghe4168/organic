@@ -1,9 +1,10 @@
-// ignore_for_file: library_private_types_in_public_api, use_key_in_widget_constructors
+// ignore_for_file: library_private_types_in_public_api, use_key_in_widget_constructors, prefer_const_constructors
 
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:organic_plate/models/user_model.dart';
+import 'package:organic_plate/models/user_model.dart'; // Import your EditProfileScreen
+import 'package:organic_plate/screens/user-panel/edit-profile-screen.dart';
 import 'package:organic_plate/utils/app_constant.dart';
 
 class ProfileScreen extends StatefulWidget {
@@ -53,6 +54,19 @@ class _ProfileScreenState extends State<ProfileScreen> {
         ),
         iconTheme: const IconThemeData(color: AppConstant.appTextColor),
         backgroundColor: AppConstant.appMainColor,
+        actions: [
+          IconButton(
+            icon: Icon(Icons.edit),
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => EditProfileScreen(userData: _userData),
+                ),
+              );
+            },
+          ),
+        ],
       ),
       body: _user != null && _userData != null
           ? Padding(
@@ -69,7 +83,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     child: const Icon(
                       Icons.person,
                       color: AppConstant.appTextColor,
-                      size: 100.0, 
+                      size: 100.0,
                     ),
                   ),
                   const SizedBox(height: 16),
@@ -91,12 +105,10 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   const SizedBox(height: 16),
                   ProfileDetailRow("Phone", _userData!.phone),
                   ProfileDetailRow("Country", _userData!.country),
-                   ProfileDetailRow("City", _userData!.city),
-                    ProfileDetailRow("Street", _userData!.street),
+                  ProfileDetailRow("City", _userData!.city),
+                  ProfileDetailRow("Street", _userData!.street),
                   ProfileDetailRow("Address", _userData!.userAddress),
-                 
                   ProfileDetailRow("Created On", _userData!.createdOn.toString()),
-                 
                 ],
               ),
             )
