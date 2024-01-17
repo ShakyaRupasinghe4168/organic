@@ -22,7 +22,7 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
   TextEditingController _cityController = TextEditingController();
   TextEditingController _streetController = TextEditingController();
   TextEditingController _userAddressController = TextEditingController();
-  // Add controllers for other fields
+  
 
   @override
   void initState() {
@@ -34,7 +34,7 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
     _cityController.text = widget.userData?.city ?? "";
     _streetController.text = widget.userData?.street ?? "";
     _userAddressController.text = widget.userData?.userAddress ?? "";
-    // Initialize other controllers as needed
+  
   }
 
   void _saveChanges() async {
@@ -46,8 +46,7 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
     String editedCity = _cityController.text;
     String editedStreet = _streetController.text;
     String editedUserAddress = _userAddressController.text;
-    // Get other edited values
-
+    
     // Update the UserModel instance with the edited values
     UserModel editedUserData = widget.userData!.copyWith(
       username: editedUsername,
@@ -57,7 +56,7 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
       city: editedCity,
       street: editedStreet,
       userAddress: editedUserAddress,
-      // Update other fields
+      
     );
 
     // Save the edited data to Firebase
@@ -73,8 +72,6 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
           .collection('users')
           .doc(editedUserData.uId)
           .update(editedUserData.toMap());
-      // Optionally, you can also update the local state in the ProfileScreen
-      // to reflect the changes immediately without requiring a reload.
     } catch (error) {
       print("Error updating user data: $error");
       // Handle the error
@@ -127,7 +124,6 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
                 controller: _userAddressController,
                 decoration: InputDecoration(labelText: 'Address'),
               ),
-              // Add other form fields for editing other details
 
               SizedBox(height: 16),
 
