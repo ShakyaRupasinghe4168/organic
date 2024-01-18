@@ -7,7 +7,6 @@ import 'package:get/get.dart';
 import 'package:lottie/lottie.dart';
 import 'package:organic_plate/controllers/get_user_data_controller.dart';
 import 'package:organic_plate/controllers/sign_in_controller.dart';
-import 'package:organic_plate/screens/admin-panel/admin_main_screen.dart';
 import 'package:organic_plate/screens/auth-ui/forget-password-screen.dart';
 import 'package:organic_plate/screens/auth-ui/sign_up_screen.dart';
 import 'package:organic_plate/screens/user-panel/main_screen.dart';
@@ -183,7 +182,7 @@ class _SignInScreenState extends State<SignInScreen> {
                                 backgroundColor: AppConstant.appScendoryColor,
                                 colorText: AppConstant.appTextColor,
                               );
-                              Get.offAll(() => AdminMainScreen());
+                              Get.offAll(() => MainScreen());
                             } else {
                               Get.offAll(() => MainScreen());
                               Get.snackbar(

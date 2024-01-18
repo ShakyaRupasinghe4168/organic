@@ -6,7 +6,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:lottie/lottie.dart';
 import 'package:organic_plate/controllers/get_user_data_controller.dart';
-import 'package:organic_plate/screens/admin-panel/admin_main_screen.dart';
 import 'package:organic_plate/screens/auth-ui/start_screen.dart';
 import 'package:organic_plate/screens/user-panel/main_screen.dart';
 import 'package:organic_plate/utils/app_constant.dart';
@@ -35,7 +34,7 @@ class _SplashScreenState extends State<SplashScreen> {
       var userData = await getUserDataController.getUserData(user!.uid);
 
       if (userData[0]['isAdmin'] == true) {
-        Get.offAll(() => AdminMainScreen());
+        Get.offAll(() => MainScreen());
       } else {
         Get.offAll(() => MainScreen());
       }
