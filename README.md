@@ -40,9 +40,7 @@ Organic Plate is a user-friendly food app designed to provide a seamless and sec
    - Detailed product pages provide comprehensive information.
    - Users can make informed decisions based on product details.
 
-## Getting Started
 
-To get started with Organic Plate, simply download the app from the [Google Play Store](#) or [Apple App Store](#). Follow the on-screen instructions to set up your account and start exploring organic and delicious food options.
 
 ![Organic Plate Logo](images/o1.png)
 
